@@ -1,0 +1,87 @@
+<!doctype html>
+<!--
+  UE3 Demo 5 – Wegwerf-Sandbox: eine winzige React-Komponente mit statischen Daten.
+  Bewusst NICHT Teil der App (kein Vite-Build, kein TypeScript, kein npm-Paket):
+  React kommt per CDN, JSX wird von Babel direkt im Browser uebersetzt
+  (<script type="text/babel">). Das ist nur fuer Experimente ok - im echten
+  Projekt uebersetzt Vite das JSX schon beim Build (siehe Demo 6).
+
+  Oeffnen: "npm run dev" laufen lassen, dann
+  http://localhost:5173/Advanced_Web_OG/ue3/demo5-sandbox/
+-->
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UE3 Demo 5 – React Sandbox</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 2rem;
+        background: #f4f6fa;
+      }
+      .case-card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 1rem 1.5rem;
+        max-width: 420px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .impure {
+        margin-top: 2rem;
+        color: #a33;
+      }
+    </style>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // -------------------------------------------------------------
+      // DIE KOMPONENTE (Task 1): keine Props, kein State, nur statische
+      // Daten als JSX. Eine Komponente ist eine Funktion, die beschreibt,
+      // WAS angezeigt werden soll - sie fasst den DOM selbst nie an.
+      // -------------------------------------------------------------
+      function CaseCard() {
+        const people = ["Signal Scholar", "Kernel Colt", "Nova Byte"];
+        return (
+          <div className="case-card">
+            <h2>Project ReMotion</h2>
+            <p>
+              Case <strong>REMOTION-2026-10</strong> · status: open
+            </p>
+            <ul>
+              {people.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
+
+      // -------------------------------------------------------------
+      // NUR FUER FRAGE 3: was passiert, wenn eine Komponente beim Rendern
+      // einen Seiteneffekt hat (globale Variable veraendern)?
+      // React rendert im StrictMode (Entwicklung) jede Komponente bewusst
+      // ZWEIMAL, um genau solche unreinen Komponenten aufzudecken.
+      // Erwartet haette man "1" - angezeigt wird "2".
+      // -------------------------------------------------------------
+      let renderCount = 0; // globaler Zustand ausserhalb von React
+
+      function ImpureCounter() {
+        renderCount++; // Seiteneffekt WAEHREND des Renderns -> falsch
+        return <p className="impure">Ich wurde angeblich {renderCount}× gerendert.</p>;
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(
+        <React.StrictMode>
+          <CaseCard />
+          <ImpureCounter />
+        </React.StrictMode>
+      );
+    </script>
+  </body>
+</html>
