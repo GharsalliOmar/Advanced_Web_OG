@@ -23,12 +23,12 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plukesch/Mystery-Road-AWE-2026-lukesch.git"
+    "url": "git+https://github.com/GharsalliOmar/Advanced_Web_OG.git"
   },
   "bugs": {
-    "url": "https://github.com/plukesch/Mystery-Road-AWE-2026-lukesch/issues"
+    "url": "https://github.com/GharsalliOmar/Advanced_Web_OG/issues"
   },
-  "homepage": "https://github.com/plukesch/Mystery-Road-AWE-2026-lukesch#readme",
+  "homepage": "https://github.com/GharsalliOmar/Advanced_Web_OG#readme",
   "dependencies": {
     "dayjs": "^1.11.23"
   },
