@@ -12,6 +12,13 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
 
+    // demo 6 (ue3): JSX in .tsx-dateien erlauben. "react-jsx" = moderne
+    // "automatic runtime": <div/> wird zu _jsx("div", ...) aus
+    // "react/jsx-runtime" -> kein "import React" in jeder datei noetig.
+    // tsc prueft hier nur die typen (noEmit) - uebersetzt wird das JSX von
+    // vite/@vitejs/plugin-react, mit derselben runtime.
+    "jsx": "react-jsx",
+
     // esbuild (das vite fuers transpilieren benutzt) uebersetzt jede datei
     // EINZELN, ohne das ganze programm zu kennen. manche TS-konstrukte
     // (z.b. re-export von reinen typen ohne "export type") ueberleben das
@@ -57,5 +64,6 @@
   // was sie importieren (state.js) wird ueber allowJs mitgezogen, aber
   // alles andere (main.js, die anderen views, app.js) ist bis demo 7
   // schlicht nicht teil dessen, was tsc ueberhaupt anschaut.
-  "include": ["js/**/*.ts"]
+  // demo 6 (ue3): react-code liegt getrennt in src/ (.tsx), vanilla bleibt in js/.
+  "include": ["js/**/*.ts", "src/**/*.ts", "src/**/*.tsx"]
 }

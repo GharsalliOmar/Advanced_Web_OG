@@ -14,8 +14,31 @@
 // NICHT nur den build: vite haengt "base" auch beim dev-server/preview an
 // die url an (z.b. localhost:5173/Advanced_Web_OG/) - ein
 // aufruf von localhost:5173/ alleine leitet automatisch dorthin um.
+// demo 6 (ue3): react dazu.
+// - plugin-react: uebersetzt JSX/TSX (automatic runtime, "react/jsx-runtime")
+//   und haengt react fast refresh an HMR an (komponenten-aenderung ohne
+//   state-verlust).
+// - zwei html-einstiegspunkte: index.html = bestehende vanilla-app (bleibt
+//   unangetastet), react.html = neue react-version waehrend der migration.
+//   vite baut im dev-server automatisch jede .html-datei, im build aber nur
+//   index.html - deshalb rollupOptions.input mit beiden. ohne das wuerde
+//   react.html auf github pages schlicht fehlen (404).
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+const root = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
   base: "/Advanced_Web_OG/",
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(root, "index.html"),
+        react: resolve(root, "react.html"),
+      },
+    },
+  },
 });
