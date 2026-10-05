@@ -115,9 +115,11 @@ h4 {
   color: #fff;
 }
 
-/* ue3 demo 9: die react-version nutzt echte <a href="#..."> als nav-eintraege
-   (vanilla: <button>). gleiche optik wie der button, ohne link-unterstreichung. */
-a.nav-btn {
+/* ue3 demo 9/10: die react-version nutzt echte <a href="#..."> fuer nav-eintraege
+   und die "go to"-links im dashboard (vanilla: <button>). gleiche optik wie der
+   button, ohne link-unterstreichung. */
+a.nav-btn,
+a.btn {
   display: inline-block;
   text-decoration: none;
   line-height: normal;

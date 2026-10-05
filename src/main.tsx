@@ -8,6 +8,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
+import CaseDataProvider from "./data/CaseDataProvider";
+import WorkspaceProvider from "./data/WorkspaceProvider";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) {
@@ -16,8 +18,16 @@ if (!rootElement) {
 
 // StrictMode: nur in der entwicklung aktiv, rendert komponenten bewusst
 // doppelt, um unreine komponenten aufzudecken (siehe demo 5 frage 3).
+// demo 10: die provider liegen OBERHALB von App und damit oberhalb des
+// routers - sie werden beim seitenwechsel nicht neu erzeugt, die daten
+// werden also genau einmal geladen und bleiben ueber alle views erhalten
+// (hierarchie aus demo 7).
 createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <CaseDataProvider>
+      <WorkspaceProvider>
+        <App />
+      </WorkspaceProvider>
+    </CaseDataProvider>
   </StrictMode>
 );
