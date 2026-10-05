@@ -177,9 +177,9 @@ endet mit dem Umschalten.
 
 ## 5. Offene Punkte für spätere Demos
 
-- **ESLint prüft aktuell nur `**/*.js`** (seit Übung 2) – `.ts`/`.tsx` werden gar nicht gelintet.
-  Für React wären `typescript-eslint` und `eslint-plugin-react-hooks` (prüft die Hook-Regeln)
-  sinnvoll.
+- ~~ESLint prüft nur `**/*.js`~~ → **erledigt** direkt nach Demo 6: `typescript-eslint`,
+  `react-hooks`, `react-refresh`; dafür TypeScript 7.0.2 → 6.0.3. Details in
+  [UE3_CHANGES.md](UE3_CHANGES.md).
 - `App.tsx` ist ein Platzhalter → Shell (Header, Nav, Routing) in **Demo 9**, Dashboard in **Demo 10**.
 
 ---
