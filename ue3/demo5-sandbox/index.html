@@ -45,12 +45,12 @@
       // WAS angezeigt werden soll - sie fasst den DOM selbst nie an.
       // -------------------------------------------------------------
       function CaseCard() {
-        const people = ["Signal Scholar", "Kernel Colt", "Nova Byte"];
+        const people = ["Diddy", "Patrick", "OG"];
         return (
           <div className="case-card">
-            <h2>Project ReMotion</h2>
+            <h2>Advanced Web OG</h2>
             <p>
-              Case <strong>REMOTION-2026-10</strong> · status: open
+              70% kreuzerl?!? <strong>Free Freizeit!</strong>
             </p>
             <ul>
               {people.map((name) => (
@@ -66,7 +66,6 @@
       // einen Seiteneffekt hat (globale Variable veraendern)?
       // React rendert im StrictMode (Entwicklung) jede Komponente bewusst
       // ZWEIMAL, um genau solche unreinen Komponenten aufzudecken.
-      // Erwartet haette man "1" - angezeigt wird "2".
       // -------------------------------------------------------------
       let renderCount = 0; // globaler Zustand ausserhalb von React
 
