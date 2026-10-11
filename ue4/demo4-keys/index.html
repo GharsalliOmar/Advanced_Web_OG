@@ -1,0 +1,125 @@
+<!doctype html>
+<!--
+  UE4 Demo 4 – Wegwerf-Beispiel: key={index} vs. key={evt.id}.
+  Bewusst NICHT Teil der App (wie die Sandbox aus UE3 Demo 5): React per CDN,
+  JSX von Babel im Browser uebersetzt. Hier ist useState erlaubt, weil es kein
+  App-Code ist - ohne irgendeine Aenderung der Liste laesst sich der
+  Index-Key-Fehler nicht zeigen.
+
+  Oeffnen: "npm run dev" laufen lassen, dann
+  http://localhost:5173/Advanced_Web_OG/ue4/demo4-keys/
+
+  Vorfuehren:
+    1. In BEIDEN Spalten beim ersten Eintrag (T01) etwas ins Notizfeld tippen
+       und das Haekchen setzen.
+    2. "Reihenfolge umdrehen" oder "Ersten entfernen" klicken.
+    3. Links (key={index}) bleibt die Notiz an POSITION 0 kleben und steht
+       jetzt beim falschen Event. Rechts (key={evt.id}) wandert sie mit T01.
+-->
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>UE4 Demo 4 – key={index} vs. key={id}</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 2rem;
+        background: #f4f6fa;
+      }
+      .columns {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .column {
+        background: #fff;
+        border-radius: 8px;
+        padding: 1rem 1.5rem;
+        min-width: 320px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .bad h2 {
+        color: #a33;
+      }
+      .good h2 {
+        color: #2a7a3a;
+      }
+      .row {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        margin: 0.4rem 0;
+      }
+      .row span {
+        width: 170px;
+      }
+      button {
+        margin-right: 0.5rem;
+      }
+    </style>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // ein paar echte events aus public/data/timeline.json (nur id + titel)
+      const EVENTS = [
+        { id: "T01", title: "Patch raises a concern" },
+        { id: "T02", title: "Signal rejects postponing" },
+        { id: "T03", title: "Release 2.8.4 approved" },
+        { id: "T04", title: "Nova enters storage" },
+      ];
+
+      // eine zeile mit EIGENEM zustand, den react nicht ueber props kennt:
+      // das <input> und die checkbox sind "uncontrolled" - ihr wert lebt im
+      // DOM-knoten. genau dieser zustand haengt an der komponenten-instanz,
+      // und welche instanz zu welchem event gehoert, entscheidet der key.
+      function Row({ evt }) {
+        return (
+          <div className="row">
+            <input type="checkbox" />
+            <span>
+              {evt.id} – {evt.title}
+            </span>
+            <input placeholder="Notiz…" />
+          </div>
+        );
+      }
+
+      function App() {
+        const [events, setEvents] = React.useState(EVENTS);
+        return (
+          <>
+            <h1>key=&#123;index&#125; vs. key=&#123;evt.id&#125;</h1>
+            <p>
+              <button onClick={() => setEvents(events.slice().reverse())}>
+                Reihenfolge umdrehen
+              </button>
+              <button onClick={() => setEvents(events.slice(1))}>Ersten entfernen</button>
+              <button onClick={() => setEvents(EVENTS)}>Zurücksetzen</button>
+            </p>
+            <div className="columns">
+              <div className="column bad">
+                <h2>FALSCH: key=&#123;index&#125;</h2>
+                {events.map((evt, index) => (
+                  <Row key={index} evt={evt} />
+                ))}
+              </div>
+              <div className="column good">
+                <h2>RICHTIG: key=&#123;evt.id&#125;</h2>
+                {events.map((evt) => (
+                  <Row key={evt.id} evt={evt} />
+                ))}
+              </div>
+            </div>
+          </>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+  </body>
+</html>

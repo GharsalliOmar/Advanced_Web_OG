@@ -44,3 +44,16 @@ Grundsatz dieser Übung: **nur so viel Code wie die Aufgabe verlangt.** Kein `us
 
 Kein neuer Code. Die drei gemappten Listen (`people`, `locations`, `timeline`, jeweils mit
 `key={….id}`) gibt es schon seit Demo 1. Nur Doku.
+
+---
+
+## Demo 4 – Stabile Keys
+
+**Neu**
+
+- `ue4/demo4-keys/index.html`: Wegwerf-Sandbox (React per CDN, nicht Teil der App). Dieselbe
+  Liste zweimal mit `key={index}` vs. `key={evt.id}`, Buttons zum Umdrehen/Entfernen. Zeigt, dass
+  Eingaben bei `key={index}` beim falschen Event landen.
+
+Im App-Code keine Änderung. Dort stehen seit Demo 1 überall die echten ids als Key. Bewusst
+`key={index}` nur bei den reinen Text-Listen in `PersonCard`/`LocationCard` (siehe Demo 4 F3).
