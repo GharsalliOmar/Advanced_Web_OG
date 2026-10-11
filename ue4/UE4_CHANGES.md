@@ -37,3 +37,10 @@ Grundsatz dieser Übung: **nur so viel Code wie die Aufgabe verlangt.** Kein `us
   da sind.
 - `src/pages/TimelinePage.tsx`: Leerzustand „No timeline events match …“ per Ternary
 - `styles.css`: `a.tab-btn` wie `a.btn` (keine Unterstreichung) + `color: inherit`
+
+---
+
+## Demo 3 – Listen rendern
+
+Kein neuer Code. Die drei gemappten Listen (`people`, `locations`, `timeline`, jeweils mit
+`key={….id}`) gibt es schon seit Demo 1. Nur Doku.
