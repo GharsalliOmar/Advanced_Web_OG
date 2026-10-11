@@ -2,7 +2,7 @@
 // index.html. die 4 eintraege sind hier daten + ein wiederholter baustein
 // statt 4x kopiertem html. "go to"-links sind echte <a href="#..."> wie in
 // der navigation (demo 9).
-import { hrefFor, type ViewName } from "../lib/routes";
+import { hrefFor, type ViewName } from "../../shell/routes";
 
 const HOWTO_ITEMS: { view: ViewName; title: string; text: string; linkLabel: string }[] = [
   {

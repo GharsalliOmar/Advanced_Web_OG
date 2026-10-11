@@ -5,13 +5,13 @@
 // nicht im DOM (vanilla: alle 5 <section>s immer da, nur per css versteckt).
 // kein viewRendered-cache noetig: react rendert, was der zustand sagt.
 // ---------------------------------------------------------------------
-import type { Route } from "./lib/routes";
-import DashboardPage from "./pages/DashboardPage";
-import EvidencePage from "./pages/EvidencePage";
-import PeoplePage from "./pages/PeoplePage";
-import TimelinePage from "./pages/TimelinePage";
-import WorkspacePage from "./pages/WorkspacePage";
-import NotFoundPage from "./pages/NotFoundPage";
+import type { Route } from "./routes";
+import DashboardPage from "../features/dashboard/DashboardPage";
+import EvidencePage from "../features/evidence/EvidencePage";
+import PeoplePage from "../features/people-locations/PeoplePage";
+import TimelinePage from "../features/timeline/TimelinePage";
+import WorkspacePage from "../features/workspace/WorkspacePage";
+import NotFoundPage from "./NotFoundPage";
 
 interface PageRouterProps {
   route: Route;

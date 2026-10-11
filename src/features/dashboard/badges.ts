@@ -3,7 +3,7 @@
 // "unreviewed"), liefert aber den typisierten BadgeTone statt eines
 // css-klassen-strings. eigene datei, damit Badge.tsx nur die komponente
 // exportiert (fast refresh).
-import type { BadgeTone } from "../components/Badge";
+import type { BadgeTone } from "../../components/Badge";
 
 export function statusTone(status: string | undefined | null): BadgeTone {
   const s = (status || "").toLowerCase();

@@ -2,9 +2,9 @@
 // ue4 demo 2: tabs. welcher tab aktiv ist, kommt als prop aus der url
 // ("#people" / "#people/locations") - kein useState, kein classList.add/remove
 // wie in switchPeopleTab() (js/views/people.ts).
-import { useCaseData } from "../data/caseDataContext";
-import PersonCard from "../components/PersonCard";
-import LocationCard from "../components/LocationCard";
+import { useCaseData } from "../../data/caseDataContext";
+import PersonCard from "./PersonCard";
+import LocationCard from "./LocationCard";
 
 interface PeoplePageProps {
   tab: "people" | "locations";

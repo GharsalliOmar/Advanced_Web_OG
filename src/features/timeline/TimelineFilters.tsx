@@ -2,7 +2,7 @@
 // presentational: bekommt die auswahl-moeglichkeiten als props, liest selbst
 // keine daten. die dropdowns sind nur optisch vollstaendig (kein onChange) -
 // das filtern ist laut angabe erst thema von uebung 5.
-import type { Location, Person } from "../../js/types";
+import type { Location, Person } from "../../../js/types";
 
 interface TimelineFiltersProps {
   people: Person[];

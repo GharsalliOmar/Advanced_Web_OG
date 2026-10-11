@@ -3,7 +3,7 @@
 // falsche url stehen - url und inhalt passen dann nicht zusammen (demo 4).
 // hier: ehrlich sagen, dass es die seite nicht gibt, und einen weg zurueck
 // anbieten. die url bleibt, was der nutzer eingegeben hat.
-import { DEFAULT_VIEW, hrefFor } from "../lib/routes";
+import { DEFAULT_VIEW, hrefFor } from "./routes";
 
 interface NotFoundPageProps {
   requested: string;

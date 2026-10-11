@@ -1,5 +1,5 @@
-import type { CaseFile } from "../../js/types";
-import Badge from "./Badge";
+import type { CaseFile } from "../../../js/types";
+import Badge from "../../components/Badge";
 
 interface CaseSummaryCardProps {
   caseFile: CaseFile;

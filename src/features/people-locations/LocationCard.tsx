@@ -1,5 +1,5 @@
 // ue4 demo 1: react-gegenstueck zu renderLocations() (js/views/people.ts).
-import type { Location } from "../../js/types";
+import type { Location } from "../../../js/types";
 import Card from "./Card";
 
 interface LocationCardProps {

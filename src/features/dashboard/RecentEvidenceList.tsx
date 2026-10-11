@@ -1,6 +1,6 @@
-import type { Evidence } from "../../js/types";
-import { statusTone } from "../lib/badges";
-import Badge from "./Badge";
+import type { Evidence } from "../../../js/types";
+import { statusTone } from "./badges";
+import Badge from "../../components/Badge";
 import MiniListItem from "./MiniListItem";
 
 interface RecentEvidenceListProps {

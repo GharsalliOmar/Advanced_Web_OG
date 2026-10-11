@@ -9,12 +9,12 @@
 // demo 10: daten kommen aus den providern in main.tsx (oberhalb von App);
 // solange sie laden, liegt das overlay ueber allem - wie in der vanilla-app.
 import { useEffect } from "react";
-import { useHashRoute } from "./hooks/useHashRoute";
-import { useCaseData } from "./data/caseDataContext";
-import { VIEWS } from "./lib/routes";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import LoadingOverlay from "./components/LoadingOverlay";
+import { useHashRoute } from "./useHashRoute";
+import { useCaseData } from "../data/caseDataContext";
+import { VIEWS } from "./routes";
+import Header from "./Header";
+import Footer from "./Footer";
+import LoadingOverlay from "./LoadingOverlay";
 import PageRouter from "./PageRouter";
 
 // default export: dieses modul hat genau eine hauptsache (die App-komponente)

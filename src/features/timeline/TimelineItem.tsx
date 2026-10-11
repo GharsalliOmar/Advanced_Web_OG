@@ -2,9 +2,9 @@
 // renderTimeline() (js/views/timeline.ts).
 // heisst TimelineItem statt TimelineEvent, weil TimelineEvent schon der
 // daten-typ aus js/types.ts ist.
-import type { Certainty, TimelineEvent } from "../../js/types";
-import { formatDate } from "../../js/utils";
-import Badge, { type BadgeTone } from "./Badge";
+import type { Certainty, TimelineEvent } from "../../../js/types";
+import { formatDate } from "../../../js/utils";
+import Badge, { type BadgeTone } from "../../components/Badge";
 
 // ue4 demo 2: lookup-tabelle statt if-kette (vanilla: certaintyBadgeClass()).
 // Record<Certainty, ...> zwingt, fuer JEDEN certainty-wert eine farbe anzugeben -

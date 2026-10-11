@@ -2,9 +2,9 @@
 // ue4 demo 5: aufgeteilt. diese seite ist jetzt nur noch die FEATURE-
 // komponente: daten holen, ladezustand pruefen, ableiten was angezeigt wird.
 // das markup steckt in TimelineFilters und TimelineList (presentational).
-import { useCaseData } from "../data/caseDataContext";
-import TimelineFilters from "../components/TimelineFilters";
-import TimelineList from "../components/TimelineList";
+import { useCaseData } from "../../data/caseDataContext";
+import TimelineFilters from "./TimelineFilters";
+import TimelineList from "./TimelineList";
 
 export default function TimelinePage() {
   const caseData = useCaseData();

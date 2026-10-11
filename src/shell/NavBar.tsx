@@ -1,7 +1,7 @@
-// die 5 nav-eintraege kommen aus der VIEWS-liste (src/lib/routes.ts) statt
+// die 5 nav-eintraege kommen aus der VIEWS-liste (src/shell/routes.ts) statt
 // 5x von hand im markup zu stehen wie in index.html. welcher aktiv ist,
 // entscheidet der aufrufer - NavBar selbst kennt den hash nicht.
-import { VIEWS, type ViewName } from "../lib/routes";
+import { VIEWS, type ViewName } from "./routes";
 import NavButton from "./NavButton";
 
 interface NavBarProps {

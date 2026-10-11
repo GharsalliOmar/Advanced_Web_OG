@@ -73,3 +73,24 @@ Im App-Code keine Änderung. Dort stehen seit Demo 1 überall die echten ids als
 
 - `src/pages/TimelinePage.tsx`: nur noch Feature-Komponente (Daten holen, Ladezustand, Typen
   ableiten). Das Markup steckt jetzt in den zwei neuen Komponenten. Verhalten unverändert.
+
+---
+
+## Demo 6 – Feature-Ordner
+
+**Verschoben** (`git mv`, nur Import-Pfade angepasst, kein Verhalten geändert)
+
+- `src/App.tsx`, `src/PageRouter.tsx`, `src/hooks/useHashRoute.ts`, `src/lib/routes.ts`, `Header`,
+  `NavBar`, `NavButton`, `Footer`, `LoadingOverlay`, `NotFoundPage` → `src/shell/`
+- Dashboard-Seite + alle ihre Bausteine (inkl. `MiniListItem`, `lib/badges.ts`) →
+  `src/features/dashboard/`
+- `PeoplePage`, `PersonCard`, `LocationCard`, `Card` → `src/features/people-locations/`
+- `TimelinePage`, `TimelineFilters`, `TimelineList`, `TimelineItem` → `src/features/timeline/`
+- `EvidencePage` → `src/features/evidence/`, `WorkspacePage` → `src/features/workspace/`
+- In `src/components/` bleiben nur `Badge` und `PagePlaceholder` (von ≥ 2 Features benutzt)
+- `src/pages/`, `src/hooks/`, `src/lib/` sind dadurch leer und entfernt
+
+**Geändert**
+
+- `src/main.tsx`: Import `./shell/App`
+- `README.md`: neuer Abschnitt „React source structure“ mit Baum und Shared-vs-lokal-Regel

@@ -1,7 +1,7 @@
 // ue4 demo 5: aus TimelinePage herausgeloest - NUR die liste (+ leerzustand).
 // presentational: zeigt genau die events, die sie bekommt. WELCHE das sind
 // (alle, gefiltert, sortiert), entscheidet der aufrufer.
-import type { Location, TimelineEvent } from "../../js/types";
+import type { Location, TimelineEvent } from "../../../js/types";
 import TimelineItem from "./TimelineItem";
 
 interface TimelineListProps {

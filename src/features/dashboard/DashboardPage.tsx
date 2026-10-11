@@ -7,14 +7,14 @@
 // veralten koennte. bei 18 eintraegen ist das neu-berechnen billiger als
 // jede cache-logik (useMemo waere hier unnoetige komplexitaet).
 // ---------------------------------------------------------------------
-import { useCaseData, type CaseData } from "../data/caseDataContext";
-import { useWorkspace } from "../data/workspaceContext";
-import IntroCard from "../components/IntroCard";
-import CaseSummaryCard from "../components/CaseSummaryCard";
-import StatCard from "../components/StatCard";
-import ReviewProgressBar from "../components/ReviewProgressBar";
-import RecentEvidenceList from "../components/RecentEvidenceList";
-import RecentTimelineList from "../components/RecentTimelineList";
+import { useCaseData, type CaseData } from "../../data/caseDataContext";
+import { useWorkspace } from "../../data/workspaceContext";
+import IntroCard from "./IntroCard";
+import CaseSummaryCard from "./CaseSummaryCard";
+import StatCard from "./StatCard";
+import ReviewProgressBar from "./ReviewProgressBar";
+import RecentEvidenceList from "./RecentEvidenceList";
+import RecentTimelineList from "./RecentTimelineList";
 
 export default function DashboardPage() {
   const caseData = useCaseData();

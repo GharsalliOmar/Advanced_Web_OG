@@ -1,6 +1,6 @@
 // ue4 demo 1: react-gegenstueck zum html-string in renderPeople()
 // (js/views/people.ts). eine person rein, markup raus - kein innerHTML.
-import type { Person } from "../../js/types";
+import type { Person } from "../../../js/types";
 import Card from "./Card";
 
 interface PersonCardProps {

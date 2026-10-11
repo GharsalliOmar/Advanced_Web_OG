@@ -12,7 +12,7 @@
 // kein eigener useState-spiegel noetig, der auseinanderlaufen koennte.
 // ---------------------------------------------------------------------
 import { useSyncExternalStore } from "react";
-import { parseHash, type Route } from "../lib/routes";
+import { parseHash, type Route } from "./routes";
 
 function subscribe(onChange: () => void): () => void {
   window.addEventListener("hashchange", onChange);

@@ -1,7 +1,7 @@
 // platzhalter fuer views, die noch nicht nach react migriert sind (ue3:
 // alles ausser dem dashboard). verlinkt auf dieselbe view in der vanilla-app,
 // damit man waehrend der migration trotzdem ueberall hinkommt.
-import type { ViewName } from "../lib/routes";
+import type { ViewName } from "../shell/routes";
 
 interface PagePlaceholderProps {
   title: string;

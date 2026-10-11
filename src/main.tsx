@@ -7,7 +7,7 @@
 // ---------------------------------------------------------------------
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
+import App from "./shell/App";
 import CaseDataProvider from "./data/CaseDataProvider";
 import WorkspaceProvider from "./data/WorkspaceProvider";
 

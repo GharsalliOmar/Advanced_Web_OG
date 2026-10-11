@@ -1,6 +1,6 @@
 // header mit branding + navigation - gleiches markup/gleiche css-klassen wie
 // der statische header in index.html, damit beide versionen gleich aussehen.
-import type { ViewName } from "../lib/routes";
+import type { ViewName } from "./routes";
 import NavBar from "./NavBar";
 
 // BASE_URL = "base" aus vite.config.js ("/Advanced_Web_OG/") - so stimmt der

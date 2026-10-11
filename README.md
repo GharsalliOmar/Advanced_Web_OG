@@ -46,6 +46,32 @@ Then open `http://localhost:8080` (or whatever port your server prints) in your 
   Workspace data is saved to your browser's local storage and will still be there when you reload
   the page.
 
+## React source structure (`src/`)
+
+The React version (`react.html`, migration since Exercise 3) is organised **by feature**, not by
+file type:
+
+```
+src/
+├─ main.tsx              entry point (providers + <App>)
+├─ shell/                app frame: App, router, Header/NavBar/NavButton, Footer,
+│                        LoadingOverlay, NotFoundPage, route definitions
+├─ data/                 shared data: CaseDataProvider / WorkspaceProvider + their hooks
+├─ components/           shared UI used by 2+ features: Badge, PagePlaceholder
+└─ features/
+   ├─ dashboard/         DashboardPage + its cards/lists (IntroCard, StatCard, MiniListItem, …)
+   ├─ people-locations/  PeoplePage, PersonCard, LocationCard, Card
+   ├─ timeline/          TimelinePage, TimelineFilters, TimelineList, TimelineItem
+   ├─ evidence/          EvidencePage (placeholder until Exercise 5)
+   └─ workspace/         WorkspacePage (placeholder until Exercise 5)
+```
+
+**Rule for shared vs. feature-local:** a file starts in the feature folder that uses it. It moves to
+`components/` (UI) or `data/` (state/data) only once a **second** feature imports it. Example:
+`Badge` is used by the dashboard _and_ the timeline → `components/`. `Card` is generic, but only
+People & Locations uses it → stays in `features/people-locations/`. Features never import from
+each other, only from `shell/`, `data/` and `components/`.
+
 ## Browser requirements
 
 A recent version of any evergreen desktop browser (Chrome, Firefox, Edge, Safari). JavaScript must
