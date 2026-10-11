@@ -53,13 +53,18 @@ export default function TimelinePage() {
         </div>
       </div>
       <div className="timeline-container">
-        {timeline.map((evt) => (
-          <TimelineItem
-            key={evt.id}
-            event={evt}
-            locationNames={evt.locationIds.map(locationName)}
-          />
-        ))}
+        {/* ue4 demo 2: leerzustand per ternary - entweder hinweis ODER liste */}
+        {timeline.length === 0 ? (
+          <p>No timeline events match the current filters.</p>
+        ) : (
+          timeline.map((evt) => (
+            <TimelineItem
+              key={evt.id}
+              event={evt}
+              locationNames={evt.locationIds.map(locationName)}
+            />
+          ))
+        )}
       </div>
     </section>
   );

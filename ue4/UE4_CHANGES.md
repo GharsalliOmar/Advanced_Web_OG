@@ -22,3 +22,18 @@ Grundsatz dieser Übung: **nur so viel Code wie die Aufgabe verlangt.** Kein `us
 - `src/pages/PeoplePage.tsx`: Platzhalter → echte Seite, rendert alle Personen und Orte
 - `src/pages/TimelinePage.tsx`: Platzhalter → echte Seite mit Filterleiste (nur Optik, kein
   `onChange`) und allen Einträgen
+
+---
+
+## Demo 2 – Bedingtes Rendern
+
+**Geändert**
+
+- `src/pages/PeoplePage.tsx`: Prop `tab: "people" | "locations"`. Tab-Leiste als `<a href>`-Links
+  (Klasse `active` per Ternary). Es wird nur eine der beiden Listen gerendert (Ternary).
+- `src/PageRouter.tsx`: gibt `tab` aus dem Hash-Param weiter (`#people/locations` → Locations)
+- `src/components/TimelineItem.tsx`: Certainty als `<Badge>`, Farbe per Lookup-Tabelle
+  `CERTAINTY_TONE` (ersetzt `certaintyBadgeClass()`). „Location:“-Zeile nur per `&&`, wenn Orte
+  da sind.
+- `src/pages/TimelinePage.tsx`: Leerzustand „No timeline events match …“ per Ternary
+- `styles.css`: `a.tab-btn` wie `a.btn` (keine Unterstreichung) + `color: inherit`

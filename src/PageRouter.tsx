@@ -30,7 +30,8 @@ export default function PageRouter({ route }: PageRouterProps) {
     case "evidence":
       return <EvidencePage />;
     case "people":
-      return <PeoplePage />;
+      // ue4 demo 2: "#people/locations" -> locations-tab, alles andere -> people
+      return <PeoplePage tab={route.param === "locations" ? "locations" : "people"} />;
     case "timeline":
       return <TimelinePage />;
     case "workspace":

@@ -116,10 +116,12 @@ h4 {
 }
 
 /* ue3 demo 9/10: die react-version nutzt echte <a href="#..."> fuer nav-eintraege
-   und die "go to"-links im dashboard (vanilla: <button>). gleiche optik wie der
+   und die "go to"-links im dashboard (vanilla: <button>). ue4 demo 2: dazu die
+   people/locations-tabs. gleiche optik wie der
    button, ohne link-unterstreichung. */
 a.nav-btn,
-a.btn {
+a.btn,
+a.tab-btn {
   display: inline-block;
   text-decoration: none;
   line-height: normal;
@@ -584,6 +586,11 @@ a:focus-visible {
   border: 1px solid var(--color-border);
   background: #fff;
   cursor: pointer;
+}
+
+/* ue4 demo 2: als <a> sonst link-blau; aktiver tab (.tab-btn.active) gewinnt per spezifitaet */
+a.tab-btn {
+  color: inherit;
 }
 
 .tab-btn.active {
