@@ -2,6 +2,7 @@
 // (js/views/people.ts). eine person rein, markup raus - kein innerHTML.
 import type { Person } from "../../../js/types";
 import Card from "./Card";
+import BulletList from "./BulletList";
 
 interface PersonCardProps {
   person: Person;
@@ -24,13 +25,7 @@ export default function PersonCard({ person }: PersonCardProps) {
       <p>
         <strong>Speciality:</strong> {person.speciality}
       </p>
-      <ul>
-        {/* index als key ist hier ok: statische text-liste ohne id, wird nie
-            umsortiert/gefiltert und hat keinen eigenen zustand (ue4 demo 4 F3) */}
-        {person.responsibilities.map((r, index) => (
-          <li key={index}>{r}</li>
-        ))}
-      </ul>
+      <BulletList items={person.responsibilities} />
       <div className="person-statement">&ldquo;{person.statement}&rdquo;</div>
     </Card>
   );

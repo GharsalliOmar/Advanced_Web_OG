@@ -123,10 +123,9 @@ Ja, wenn **alle** diese Bedingungen erfüllt sind:
 Genau so ein Fall steht in unserem Code, bewusst mit Kommentar:
 
 ```tsx
-// PersonCard.tsx
-const responsibilities = person.responsibilities.map((r, index) => <li key={index}>{r}</li>);
-// LocationCard.tsx
-const contains = location.contains.map((item, index) => <li key={index}>{item}</li>);
+// PersonCard.tsx (person.responsibilities) und LocationCard.tsx (location.contains)
+// – seit Demo 7 zusammengefasst in features/people-locations/BulletList.tsx:
+const list = items.map((item, index) => <li key={index}>{item}</li>);
 ```
 
 Das sind reine Text-Listen (`string[]`) ohne id. Sie werden immer in der Reihenfolge aus der JSON

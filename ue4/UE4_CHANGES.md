@@ -94,3 +94,18 @@ Im App-Code keine Änderung. Dort stehen seit Demo 1 überall die echten ids als
 
 - `src/main.tsx`: Import `./shell/App`
 - `README.md`: neuer Abschnitt „React source structure“ mit Baum und Shared-vs-lokal-Regel
+
+---
+
+## Demo 7 – Wiederverwendbare UI
+
+**Neu**
+
+- `src/features/people-locations/BulletList.tsx`: `<ul>` aus einem `string[]` (Props
+  `items: string[]`)
+
+**Geändert**
+
+- `PersonCard.tsx`: eigene `<ul>`-Schleife → `<BulletList items={person.responsibilities} />`
+- `LocationCard.tsx`: eigene `<ul>`-Schleife → `<BulletList items={location.contains} />`
+- `ue4/UE4_DEMO4_STABLE_KEYS.md`: Code-Beispiel in F3 auf `BulletList` aktualisiert
