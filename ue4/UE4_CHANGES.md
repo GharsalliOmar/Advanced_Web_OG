@@ -57,3 +57,19 @@ Kein neuer Code. Die drei gemappten Listen (`people`, `locations`, `timeline`, j
 
 Im App-Code keine Änderung. Dort stehen seit Demo 1 überall die echten ids als Key. Bewusst
 `key={index}` nur bei den reinen Text-Listen in `PersonCard`/`LocationCard` (siehe Demo 4 F3).
+
+---
+
+## Demo 5 – Presentational vs. Feature, Split
+
+**Neu**
+
+- `src/components/TimelineFilters.tsx`: die Filterleiste (presentational, Props `people`,
+  `locations`, `types`)
+- `src/components/TimelineList.tsx`: Liste + Leerzustand (presentational, Props `events`,
+  `locations`)
+
+**Geändert**
+
+- `src/pages/TimelinePage.tsx`: nur noch Feature-Komponente (Daten holen, Ladezustand, Typen
+  ableiten). Das Markup steckt jetzt in den zwei neuen Komponenten. Verhalten unverändert.
