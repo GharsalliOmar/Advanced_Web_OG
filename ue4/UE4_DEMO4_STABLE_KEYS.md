@@ -124,13 +124,9 @@ Genau so ein Fall steht in unserem Code, bewusst mit Kommentar:
 
 ```tsx
 // PersonCard.tsx
-{
-  person.responsibilities.map((r, index) => <li key={index}>{r}</li>);
-}
+const responsibilities = person.responsibilities.map((r, index) => <li key={index}>{r}</li>);
 // LocationCard.tsx
-{
-  location.contains.map((item, index) => <li key={index}>{item}</li>);
-}
+const contains = location.contains.map((item, index) => <li key={index}>{item}</li>);
 ```
 
 Das sind reine Text-Listen (`string[]`) ohne id. Sie werden immer in der Reihenfolge aus der JSON
