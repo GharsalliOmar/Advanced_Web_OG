@@ -17,8 +17,6 @@ const CERTAINTY_TONE: Record<Certainty, BadgeTone> = {
 
 interface TimelineItemProps {
   event: TimelineEvent;
-  // schon aufgeloeste namen (L01 -> "Lab ..."): die karte zeigt nur an,
-  // das nachschlagen macht der aufrufer
   locationNames: string[];
 }
 

@@ -62,8 +62,8 @@ src/
    ├─ dashboard/         DashboardPage + its cards/lists (IntroCard, StatCard, MiniListItem, …)
    ├─ people-locations/  PeoplePage, PersonCard, LocationCard, Card
    ├─ timeline/          TimelinePage, TimelineFilters, TimelineList, TimelineItem
-   ├─ evidence/          EvidencePage (placeholder until Exercise 5)
-   └─ workspace/         WorkspacePage (placeholder until Exercise 5)
+   ├─ evidence/          EvidencePage (placeholder)
+   └─ workspace/         WorkspacePage (placeholder)
 ```
 
 **Rule for shared vs. feature-local:** a file starts in the feature folder that uses it. It moves to

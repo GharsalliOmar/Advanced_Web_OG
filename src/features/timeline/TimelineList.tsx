@@ -6,7 +6,6 @@ import TimelineItem from "./TimelineItem";
 
 interface TimelineListProps {
   events: TimelineEvent[];
-  // zum aufloesen L01 -> "Human-Robot Interaction Laboratory"
   locations: Location[];
 }
 
